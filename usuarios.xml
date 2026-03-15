@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<usuarios xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="usuarios.xsd">
+  <usuario id="U001" rol="admin" estado="activo">
+    <nombreCompleto>Lucia Moreno Ruiz</nombreCompleto>
+    <email>lucia.moreno+soporte@miapp.es</email>
+    <telefono>+34 612345678</telefono>
+    <codigoPostal>28013</codigoPostal>
+    <nombreUsuario>lucia.moreno_01</nombreUsuario>
+    <contrasena>Girasol9!</contrasena>
+    <fechaRegistro>2026-03-10</fechaRegistro>
+  </usuario>
+
+  <usuario id="U002" rol="editor" estado="activo">
+    <nombreCompleto>Carlos Vega Santos</nombreCompleto>
+    <email>c.vega@web-app.org</email>
+    <telefono>0034 912 345 678</telefono>
+    <codigoPostal>41005</codigoPostal>
+    <nombreUsuario>cvega-92</nombreUsuario>
+    <contrasena>RayoAzul7#</contrasena>
+    <fechaRegistro>2026-03-12</fechaRegistro>
+  </usuario>
+
+  <usuario id="U003" rol="user" estado="bloqueado">
+    <nombreCompleto>Marta Gil Perez</nombreCompleto>
+    <email>marta_gil@correo.net</email>
+    <telefono>698765432</telefono>
+    <codigoPostal>15001</codigoPostal>
+    <nombreUsuario>marta.gil_3</nombreUsuario>
+    <contrasena>SolNorte8$</contrasena>
+    <fechaRegistro>2026-03-14</fechaRegistro>
+  </usuario>
+</usuarios>

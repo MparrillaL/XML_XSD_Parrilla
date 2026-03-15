@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+
+  <xs:element name="usuarios">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="usuario" type="Usuario" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="Usuario">
+    <xs:sequence>
+      <xs:element name="nombreCompleto" type="NombreCompleto"/>
+      <xs:element name="email" type="Email"/>
+      <xs:element name="telefono" type="TelefonoES"/>
+      <xs:element name="codigoPostal" type="CodigoPostalES"/>
+      <xs:element name="nombreUsuario" type="NombreUsuario"/>
+      <xs:element name="contrasena" type="Contrasena"/>
+      <xs:element name="fechaRegistro" type="xs:date"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="IdUsuario" use="required"/>
+    <xs:attribute name="rol" type="Rol" use="required"/>
+    <xs:attribute name="estado" type="Estado" use="required"/>
+  </xs:complexType>
+
+  <xs:simpleType name="IdUsuario">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="U\d{3}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Rol">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="admin"/>
+      <xs:enumeration value="editor"/>
+      <xs:enumeration value="user"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Estado">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="activo"/>
+      <xs:enumeration value="bloqueado"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="NombreCompleto">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="5"/>
+      <xs:maxLength value="90"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Email">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="254"/>
+      <xs:pattern value="[A-Za-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(\.[A-Za-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*@[A-Za-z0-9]([A-Za-z0-9-]*[A-Za-z0-9])?(\.[A-Za-z0-9]([A-Za-z0-9-]*[A-Za-z0-9])?)+"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="TelefonoES">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="(\+34|0034)?[ -]?[6789]\d([ -]?\d){7}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodigoPostalES">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="(0[1-9]|[1-4][0-9]|5[0-2])\d{3}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="NombreUsuario">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="4"/>
+      <xs:maxLength value="16"/>
+      <xs:pattern value="[a-z][a-z0-9._-]{3,15}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Contrasena">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[A-Za-z0-9@#$%._!?*+=-]{8,64}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>
