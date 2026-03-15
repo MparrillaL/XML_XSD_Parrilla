@@ -101,13 +101,3 @@ Con esto el XML queda enlazado al esquema para validacion.
 2. Probar casos validos e invalidos por cada campo.
 3. Ajustar la expresion y trasladarla a `xs:pattern` (adaptando escapes cuando proceda).
 4. Mostrar esta evidencia en la grabacion de pantalla solicitada.
-
-## 7) Evidencias recomendadas para entrega
-- Archivo XML: `usuarios.xml`.
-- Archivo XSD: `usuarios.xsd`.
-- Documento de justificacion: `informe_validacion.md`.
-- Grabacion breve mostrando:
-  - diseno de regex en regex101,
-  - asociacion XML-XSD,
-  - validacion correcta,
-  - deteccion y correccion de un error.
